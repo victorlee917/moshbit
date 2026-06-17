@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Pixelify_Sans, Space_Mono } from "next/font/google";
 import localFont from "next/font/local";
-import "./globals.css";
+import { notFound } from "next/navigation";
+import "../globals.css";
+import { getDictionary, hasLocale, locales } from "./dictionaries";
 
 const pretendard = localFont({
-  src: "./fonts/PretendardVariable.woff2",
+  src: "../fonts/PretendardVariable.woff2",
   variable: "--font-pretendard",
   display: "swap",
   weight: "45 920",
@@ -24,20 +26,34 @@ const spaceMono = Space_Mono({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "MoshBit — 사람과 AI가 함께 읽는 기획서",
-  description:
-    "대화로 시작해 마크다운으로 완성하는 AI 협업 기획 도구. 개발자와 디자이너가 각자의 AI로 같은 문서를 다룹니다.",
-};
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
 
-export default function RootLayout({
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  const dict = await getDictionary(lang);
+  return { title: dict.meta.title, description: dict.meta.description };
+}
+
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  if (!hasLocale(lang)) notFound();
+
   return (
     <html
-      lang="ko"
+      lang={lang}
       className={`${pretendard.variable} ${pixelifySans.variable} ${spaceMono.variable} h-full antialiased`}
     >
       <body className="min-h-full">{children}</body>

@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "Moshbit — planning that humans and AI read together",
+    "description": "An AI collaboration tool: start in conversation, finish in markdown. Developers and designers each work the same doc with their own AI."
+  },
+  "login": {
+    "tagline": "Let's Mosh Together",
+    "continueWithGithub": "Continue with GitHub",
+    "continueWithGoogle": "Continue with Google",
+    "consent": {
+      "before": "By continuing, you agree to Moshbit's ",
+      "terms": "Terms of Service",
+      "and": " and ",
+      "privacy": "Privacy Policy",
+      "after": "."
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "updated": "Last updated: June 18, 2026",
+    "back": "Back to login",
+    "intro": "These Terms govern your use of Moshbit. By creating an account or using the service, you agree to them.",
+    "sections": [
+      {
+        "heading": "1. The service",
+        "body": "Moshbit is a tool for drafting and collaborating on planning documents in markdown, together with AI. We may add, change, or remove features over time."
+      },
+      {
+        "heading": "2. Accounts",
+        "body": "You sign in through a third-party provider such as GitHub or Google. You are responsible for activity under your account and for keeping your access secure."
+      },
+      {
+        "heading": "3. Your content",
+        "body": "You keep all rights to the documents and content you create. You grant us only the permissions needed to store, display, and operate the service for you."
+      },
+      {
+        "heading": "4. Acceptable use",
+        "body": "Don't use Moshbit to break the law, infringe others' rights, or disrupt the service. We may suspend accounts that do."
+      },
+      {
+        "heading": "5. Third-party and AI services",
+        "body": "Moshbit connects to services you choose, including your own AI assistant via MCP. Your use of those services is governed by their own terms, and we are not responsible for them."
+      },
+      {
+        "heading": "6. Disclaimer",
+        "body": "The service is provided 'as is', without warranties of any kind. We don't guarantee it will be uninterrupted or error-free."
+      },
+      {
+        "heading": "7. Limitation of liability",
+        "body": "To the extent permitted by law, Moshbit is not liable for indirect or consequential damages arising from your use of the service."
+      },
+      {
+        "heading": "8. Changes",
+        "body": "We may update these Terms. If we make material changes, we'll take reasonable steps to notify you. Continued use means you accept the updated Terms."
+      },
+      {
+        "heading": "9. Contact",
+        "body": "Questions about these Terms? Contact us at victorlee917@gmail.com."
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "updated": "Last updated: June 18, 2026",
+    "back": "Back to login",
+    "intro": "This Privacy Policy explains what information Moshbit collects, how we use it, and your choices.",
+    "sections": [
+      {
+        "heading": "1. Information we collect",
+        "body": "When you sign in, we receive basic profile information (such as your name and email) from your chosen provider. We also store the documents and workspace content you create, plus basic usage logs."
+      },
+      {
+        "heading": "2. How we use it",
+        "body": "We use your information to provide and improve the service, authenticate you, and keep Moshbit secure. We do not sell your personal information."
+      },
+      {
+        "heading": "3. Service providers",
+        "body": "We use Supabase (database and authentication) and Vercel (hosting) to run Moshbit. They process data on our behalf under their own security and privacy commitments."
+      },
+      {
+        "heading": "4. AI and MCP",
+        "body": "When you connect your own AI assistant through MCP, that assistant accesses your documents using your own subscription. Moshbit does not send your content to any AI provider on its own."
+      },
+      {
+        "heading": "5. Data retention",
+        "body": "We keep your information while your account is active. You can delete your content or account, after which we remove it within a reasonable period."
+      },
+      {
+        "heading": "6. Your rights",
+        "body": "You can access, correct, or delete your personal information. Contact us to make a request."
+      },
+      {
+        "heading": "7. Security",
+        "body": "We use industry-standard measures, including row-level access controls, to protect your data. No method of transmission or storage is completely secure."
+      },
+      {
+        "heading": "8. Changes",
+        "body": "We may update this Policy. Material changes will be communicated through the service or by other reasonable means."
+      },
+      {
+        "heading": "9. Contact",
+        "body": "Privacy questions? Contact us at victorlee917@gmail.com."
+      }
+    ]
+  }
+}
