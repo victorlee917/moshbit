@@ -66,11 +66,6 @@ export default function LoginPage() {
               <br />
               mosh<span className="text-acid">bit</span>
             </p>
-            <p className="mt-3 font-mono text-[12px] leading-relaxed text-smoke">
-              대화로 시작해 마크다운으로 완성하는
-              <br />
-              AI 협업 기획 도구.
-            </p>
           </div>
         </div>
       </section>
