@@ -491,7 +491,7 @@ export default function SpecDeck({
             aria-label={labels.prev}
             onClick={prev}
             disabled={current === 0}
-            className="absolute left-3 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-line bg-panel text-smoke transition-colors hover:border-line-strong hover:text-bone disabled:pointer-events-none disabled:opacity-30"
+            className="absolute left-3 z-10 hidden h-9 w-9 items-center justify-center rounded-full border border-line bg-panel text-smoke transition-colors hover:border-line-strong hover:text-bone disabled:pointer-events-none disabled:opacity-30 min-[1440px]:flex"
           >
             ‹
           </button>
@@ -511,7 +511,7 @@ export default function SpecDeck({
             aria-label={labels.next}
             onClick={next}
             disabled={current === total - 1}
-            className="absolute right-3 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-line bg-panel text-smoke transition-colors hover:border-line-strong hover:text-bone disabled:pointer-events-none disabled:opacity-30"
+            className="absolute right-3 z-10 hidden h-9 w-9 items-center justify-center rounded-full border border-line bg-panel text-smoke transition-colors hover:border-line-strong hover:text-bone disabled:pointer-events-none disabled:opacity-30 min-[1440px]:flex"
           >
             ›
           </button>
@@ -578,7 +578,26 @@ export default function SpecDeck({
           ))}
         </div>
 
-        <div className="flex w-20 shrink-0 items-center justify-end gap-2">
+        <div className="flex shrink-0 items-center justify-end gap-2 min-[1440px]:w-20">
+          {/* prev/next move here once the overlay arrows would overlap the slide */}
+          <button
+            type="button"
+            aria-label={labels.prev}
+            onClick={prev}
+            disabled={current === 0}
+            className="flex h-8 w-8 items-center justify-center rounded-md border border-line text-smoke transition-colors hover:border-line-strong hover:text-bone disabled:pointer-events-none disabled:opacity-30 min-[1440px]:hidden"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            aria-label={labels.next}
+            onClick={next}
+            disabled={current === total - 1}
+            className="flex h-8 w-8 items-center justify-center rounded-md border border-line text-smoke transition-colors hover:border-line-strong hover:text-bone disabled:pointer-events-none disabled:opacity-30 min-[1440px]:hidden"
+          >
+            ›
+          </button>
           <button
             type="button"
             onClick={toggleFullscreen}
