@@ -15,6 +15,11 @@
 //   1. **요소 이름** — 이 요소의 정책/동작 설명
 //   2. ...
 //
+// Floating pins (optional): put @x,y right after the number to drop a numbered
+// pin on the prototype at that spot — x,y are percentages (0–100) of the image.
+//   1. @50,38 **이메일 입력 필드** — 정책   ← pin at 50% across, 38% down
+// Elements without @x,y just appear in the table, no pin.
+//
 // Stable block keys:
 //   Every page gets a `key` that is STABLE across reordering — so changelog
 //   entries, diffs, and (later) comments can anchor to a block without breaking
@@ -35,6 +40,10 @@ export interface Definition {
   name: string;
   /** the policy / behaviour for that element (right of the dash) */
   policy: string;
+  /** floating-pin x position as % of the prototype (0–100), or null for no pin */
+  x: number | null;
+  /** floating-pin y position as % of the prototype (0–100), or null for no pin */
+  y: number | null;
 }
 
 export interface DeckPage {
@@ -108,14 +117,30 @@ async function parseDefinitions(md: string): Promise<Definition[]> {
   const re = /^\s*(\d+)\.\s+(.+)$/gm;
   let m: RegExpExecArray | null;
   while ((m = re.exec(md))) {
+    let rest = m[2].trim();
+
+    // optional leading "@x,y " → floating-pin position (% of the prototype)
+    let x: number | null = null;
+    let y: number | null = null;
+    const pos = rest.match(
+      /^@\s*(\d{1,3}(?:\.\d+)?)\s*,\s*(\d{1,3}(?:\.\d+)?)\s+/
+    );
+    if (pos) {
+      x = Math.min(100, Math.max(0, Number(pos[1])));
+      y = Math.min(100, Math.max(0, Number(pos[2])));
+      rest = rest.slice(pos[0].length);
+    }
+
     // "요소 이름 — 정책 설명" → split on the first dash surrounded by spaces
-    const parts = m[2].trim().split(/\s+[—–-]\s+/);
+    const parts = rest.split(/\s+[—–-]\s+/);
     const name = parts[0].trim();
     const policy = parts.slice(1).join(" — ").trim();
     defs.push({
       n: Number(m[1]),
       name: await marked.parseInline(name),
       policy: await marked.parseInline(policy),
+      x,
+      y,
     });
   }
   return defs;

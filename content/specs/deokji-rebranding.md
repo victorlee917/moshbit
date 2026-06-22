@@ -41,6 +41,6 @@ summary:
 
 # 로그인 화면
 
-1. **이메일 입력 필드** — (정의 placeholder)
-2. **로그인 버튼** — (정의 placeholder)
-3. **회원가입 링크** — (정의 placeholder)
+1. @50,38 **이메일 입력 필드** — (정의 placeholder)
+2. @50,55 **로그인 버튼** — (정의 placeholder)
+3. @50,72 **회원가입 링크** — (정의 placeholder)

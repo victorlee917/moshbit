@@ -161,22 +161,35 @@ function DetailView({ page, labels }: { page: DeckPage; labels: Labels }) {
   const frame = page.medium === "app" ? "aspect-[6/13]" : "aspect-[16/9]";
   return (
     <div className="flex h-full w-full max-w-6xl gap-8">
-      {/* prototype — no surrounding box, just the prototype at full height */}
+      {/* prototype — no surrounding box, just the prototype at full height.
+          numbered pins float on top at each element's authored position. */}
       <div className="flex h-full shrink-0 items-center justify-center">
-        {page.prototypeSrc ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={page.prototypeSrc}
-            alt=""
-            className={`h-full ${frame} max-w-full rounded-2xl object-contain shadow-2xl shadow-black/50`}
-          />
-        ) : (
-          <div
-            className={`flex h-full ${frame} max-w-full items-center justify-center rounded-2xl border border-dashed border-line-strong text-[12px] text-smoke`}
-          >
-            {labels.prototype}
-          </div>
-        )}
+        <div className={`relative h-full ${frame} max-w-full`}>
+          {page.prototypeSrc ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={page.prototypeSrc}
+              alt=""
+              className="h-full w-full rounded-2xl object-contain shadow-2xl shadow-black/50"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center rounded-2xl border border-dashed border-line-strong text-[12px] text-smoke">
+              {labels.prototype}
+            </div>
+          )}
+          {page.definitions
+            .filter((d) => d.x != null && d.y != null)
+            .map((d) => (
+              <span
+                key={d.n}
+                aria-hidden
+                style={{ left: `${d.x}%`, top: `${d.y}%` }}
+                className="absolute flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-acid text-[12px] font-bold text-stage shadow-lg ring-2 ring-stage"
+              >
+                {d.n}
+              </span>
+            ))}
+        </div>
       </div>
 
       {/* policy table */}
