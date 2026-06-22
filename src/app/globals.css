@@ -6,10 +6,12 @@
   --font-sans: var(--font-pretendard);
 
   --color-stage: #0d0c0b;
+  --color-panel: #161513;
   --color-bone: #ededea;
   --color-smoke: #76736c;
   --color-acid: #d4fb0a;
   --color-line: #232120;
+  --color-line-strong: #34312d;
 }
 
 :root {
@@ -39,6 +41,12 @@ button:not(:disabled),
   cursor: pointer;
 }
 
+/* drop the default focus ring (no blue/grey outline on click or keyboard) */
+:focus,
+:focus-visible {
+  outline: none;
+}
+
 @keyframes reveal {
   from {
     opacity: 0;
@@ -57,4 +65,126 @@ button:not(:disabled),
   .reveal {
     animation: none;
   }
+}
+
+/* Supabase-style faint dotted grid backdrop */
+.dotgrid {
+  background-image: radial-gradient(
+    circle at center,
+    var(--color-line) 1px,
+    transparent 1.5px
+  );
+  background-size: 24px 24px;
+}
+
+/* soft acid glow that bleeds down from the top of a section */
+.topglow {
+  background: radial-gradient(
+    60% 100% at 50% 0%,
+    rgba(212, 251, 10, 0.06),
+    transparent 70%
+  );
+}
+
+/* rendered markdown body (spec detail) */
+.markdown {
+  color: var(--color-bone);
+  font-size: 15px;
+  line-height: 1.75;
+}
+.markdown > * + * {
+  margin-top: 1rem;
+}
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-bone);
+}
+.markdown h1 {
+  font-size: 1.6rem;
+  margin-top: 2.5rem;
+}
+.markdown h2 {
+  font-size: 1.3rem;
+  margin-top: 2.25rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--color-line);
+}
+.markdown h3 {
+  font-size: 1.1rem;
+  margin-top: 1.75rem;
+}
+.markdown a {
+  color: var(--color-acid);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.markdown ul,
+.markdown ol {
+  padding-left: 1.4rem;
+}
+.markdown ul {
+  list-style: disc;
+}
+.markdown ol {
+  list-style: decimal;
+}
+.markdown li + li {
+  margin-top: 0.35rem;
+}
+.markdown li::marker {
+  color: var(--color-smoke);
+}
+.markdown blockquote {
+  border-left: 2px solid var(--color-line-strong);
+  padding-left: 1rem;
+  color: var(--color-smoke);
+}
+.markdown code {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85em;
+  background: var(--color-panel);
+  border: 1px solid var(--color-line);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+.markdown pre {
+  background: var(--color-panel);
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+.markdown pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.85rem;
+}
+.markdown hr {
+  border: none;
+  border-top: 1px solid var(--color-line);
+  margin: 2rem 0;
+}
+.markdown strong {
+  color: var(--color-bone);
+  font-weight: 600;
+}
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.markdown th,
+.markdown td {
+  border: 1px solid var(--color-line);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+.markdown img {
+  max-width: 100%;
+  border-radius: 8px;
 }

@@ -3,22 +3,41 @@
     "title": "Moshbit — 사람과 AI가 함께 읽는 기획서",
     "description": "대화로 시작해 마크다운으로 완성하는 AI 협업 기획 도구. 개발자와 디자이너가 각자의 AI로 같은 문서를 다룹니다."
   },
-  "login": {
-    "tagline": "Let's Mosh Together",
-    "continueWithGithub": "GitHub로 계속하기",
-    "continueWithGoogle": "Google로 계속하기",
-    "consent": {
-      "before": "계속하면 Moshbit의 ",
-      "terms": "서비스이용약관",
-      "and": "과 ",
-      "privacy": "개인정보처리방침",
-      "after": "에 동의하게 됩니다."
+  "specs": {
+    "heading": "기획서",
+    "subtitle": "사람과 AI가 함께 읽는 기획 문서.",
+    "empty": "아직 기획서가 없습니다.",
+    "untitledProject": "미분류",
+    "updated": "수정일",
+    "pages": "페이지",
+    "backToList": "기획서 목록",
+    "emptyBody": "아직 작성된 내용이 없습니다.",
+    "deck": {
+      "contents": "목차",
+      "prev": "이전 페이지",
+      "next": "다음 페이지",
+      "home": "홈",
+      "page": "페이지",
+      "fullscreen": "전체 화면",
+      "exitFullscreen": "전체 화면 종료",
+      "prototype": "프로토타입",
+      "element": "요소",
+      "policy": "정책",
+      "share": "공유",
+      "shareFirst": "첫 페이지 공유",
+      "shareCurrent": "현재 페이지 공유",
+      "copied": "복사됨!"
+    },
+    "status": {
+      "draft": "초안",
+      "review": "검토 중",
+      "final": "완료"
     }
   },
   "terms": {
     "title": "서비스이용약관",
     "updated": "최종 수정일: 2026년 6월 18일",
-    "back": "로그인으로 돌아가기",
+    "back": "홈으로 돌아가기",
     "intro": "본 약관은 Moshbit 이용에 적용됩니다. 계정을 만들거나 서비스를 이용하면 본 약관에 동의하는 것으로 간주됩니다.",
     "sections": [
       {
@@ -62,7 +81,7 @@
   "privacy": {
     "title": "개인정보처리방침",
     "updated": "최종 수정일: 2026년 6월 18일",
-    "back": "로그인으로 돌아가기",
+    "back": "홈으로 돌아가기",
     "intro": "본 방침은 Moshbit이 수집하는 정보, 이용 방식, 이용자의 선택권을 설명합니다.",
     "sections": [
       {
@@ -75,7 +94,7 @@
       },
       {
         "heading": "3. 수탁 업체",
-        "body": "Moshbit 운영을 위해 Supabase(데이터베이스·인증)와 Vercel(호스팅)을 이용합니다. 이들은 각자의 보안·개인정보 약속에 따라 회사를 대신해 데이터를 처리합니다."
+        "body": "Moshbit 운영을 위해 Vercel(호스팅)을 이용합니다. 이들은 각자의 보안·개인정보 약속에 따라 회사를 대신해 데이터를 처리합니다."
       },
       {
         "heading": "4. AI 및 MCP",

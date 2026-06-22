@@ -17,7 +17,7 @@ export default async function PrivacyPage({
       updated={t.updated}
       intro={t.intro}
       sections={t.sections}
-      backHref={`/${lang}/login`}
+      backHref={`/${lang}`}
       backLabel={t.back}
     />
   );

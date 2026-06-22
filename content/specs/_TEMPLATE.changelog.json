@@ -1,0 +1,27 @@
+{
+  "_comment": "사이드카 changelog. <slug>.md 옆에 <slug>.changelog.json 으로 둔다. versions 는 최신 버전이 먼저. entries[].block 은 변경이 닿는 블록의 안정 키(권장 — 페이지 순서가 바뀌어도 유지됨). block 없으면 page(1-based 페이지번호)로 폴백. diff 는 git 스타일(+/-/공백=문맥) 텍스트.",
+  "versions": [
+    {
+      "version": "v0.1",
+      "date": "2026-01-01",
+      "entries": [
+        {
+          "block": "detail-화면-이름",
+          "title": "변경 요약 제목",
+          "diff": "+ 추가된 내용\n- 삭제된 내용\n  유지된 문맥"
+        }
+      ]
+    },
+    {
+      "version": "v0.0",
+      "date": "2026-01-01",
+      "entries": [
+        {
+          "block": "cover-문서-제목",
+          "title": "초기 문서 생성",
+          "diff": "+ 표지 추가\n+ 챕터 구조 설정"
+        }
+      ]
+    }
+  ]
+}

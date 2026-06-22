@@ -3,22 +3,41 @@
     "title": "Moshbit — planning that humans and AI read together",
     "description": "An AI collaboration tool: start in conversation, finish in markdown. Developers and designers each work the same doc with their own AI."
   },
-  "login": {
-    "tagline": "Let's Mosh Together",
-    "continueWithGithub": "Continue with GitHub",
-    "continueWithGoogle": "Continue with Google",
-    "consent": {
-      "before": "By continuing, you agree to Moshbit's ",
-      "terms": "Terms of Service",
-      "and": " and ",
-      "privacy": "Privacy Policy",
-      "after": "."
+  "specs": {
+    "heading": "Specs",
+    "subtitle": "Planning docs that humans and AI read together.",
+    "empty": "No specs yet.",
+    "untitledProject": "Unfiled",
+    "updated": "Updated",
+    "pages": "pages",
+    "backToList": "All specs",
+    "emptyBody": "This spec has no content yet.",
+    "deck": {
+      "contents": "Contents",
+      "prev": "Previous page",
+      "next": "Next page",
+      "home": "Home",
+      "page": "Page",
+      "fullscreen": "Fullscreen",
+      "exitFullscreen": "Exit fullscreen",
+      "prototype": "Prototype",
+      "element": "Element",
+      "policy": "Policy",
+      "share": "Share",
+      "shareFirst": "Share first page",
+      "shareCurrent": "Share this page",
+      "copied": "Copied!"
+    },
+    "status": {
+      "draft": "Draft",
+      "review": "In review",
+      "final": "Final"
     }
   },
   "terms": {
     "title": "Terms of Service",
     "updated": "Last updated: June 18, 2026",
-    "back": "Back to login",
+    "back": "Back to home",
     "intro": "These Terms govern your use of Moshbit. By creating an account or using the service, you agree to them.",
     "sections": [
       {
@@ -62,7 +81,7 @@
   "privacy": {
     "title": "Privacy Policy",
     "updated": "Last updated: June 18, 2026",
-    "back": "Back to login",
+    "back": "Back to home",
     "intro": "This Privacy Policy explains what information Moshbit collects, how we use it, and your choices.",
     "sections": [
       {
@@ -75,7 +94,7 @@
       },
       {
         "heading": "3. Service providers",
-        "body": "We use Supabase (database and authentication) and Vercel (hosting) to run Moshbit. They process data on our behalf under their own security and privacy commitments."
+        "body": "We use Vercel (hosting) to run Moshbit. They process data on our behalf under their own security and privacy commitments."
       },
       {
         "heading": "4. AI and MCP",

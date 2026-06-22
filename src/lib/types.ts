@@ -1,5 +1,5 @@
-// MoshBit domain model — mirrors supabase/migrations/0001_init.sql.
-// Shared between the web app (human editing) and the MCP server (each user's own AI).
+// MoshBit domain model — the shared shape for specs that humans and each user's
+// own AI (via MCP) co-edit. Persistence is not wired up yet.
 
 export type Role = "owner" | "editor" | "viewer";
 export type AuthorKind = "human" | "ai";
